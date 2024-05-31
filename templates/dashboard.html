@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - Text File Analysis Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1920x1080');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .result h2 {
+            text-align: center;
+            animation: glow 1s infinite alternate;
+        }
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .nav-item {
+            width: 100%;
+        }
+        .nav-link {
+            text-align: center;
+        }
+        .nav-item.active  {
+            background-color: #6c757d;
+            border-radius: 5px;
+        }
+        .card-title {
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #17a2b8;
+            }
+            to {
+                text-shadow: 0 0 20px #17a2b8, 0 0 30px #17a2b8, 0 0 40px #17a2b8;
+            }
+        }
+        .graph {
+            text-align: center;
+        }
+        .graph img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand">Text Analysis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/upload">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card-body">
+                <div class="result">
+                    <h2>Analysis Results</h2>
+                    <p><strong>Sentiment Polarity:</strong> {{ sentiment.polarity }}</p>
+                    <p><strong>Sentiment Subjectivity:</strong> {{ sentiment.subjectivity }}</p>
+                    <p><strong>Word with Maximum Frequency:</strong> {{ max_word }}</p>
+                    <p><strong>Mood:</strong> {{ mood }}</p>
+                    <h3>Uploaded Text/ Analysis:</h3>
+                    <p>{{ text }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card-body">
+                <div class="graph">
+                    <h3>Word Frequency</h3>
+                    <img src="data:image/png;base64,{{ plots.word_freq }}" alt="Word Frequency Plot">
+                </div>
+            </div>
+        </div>
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card-body">
+                <div class="graph">
+                    <h3>Sentiment Analysis</h3>
+                    <img src="data:image/png;base64,{{ plots.sentiment_analysis }}" alt="Sentiment Analysis Plot">
+                </div>
+            </div>
+        </div>
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card-body">
+                <div class="graph">
+                    <h3>Word Cloud</h3>
+                    <img src="data:image/png;base64,{{ plots.word_cloud }}" alt="Word Cloud">
+                </div>
+            </div>
+        </div>
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card-body">
+                <div class="graph">
+                    <h3>Number of Messages</h3>
+                    <img src="data:image/png;base64,{{ plots.mood_distribution }}" alt="Mood Distribution Plot">
+                </div>
+            </div>
+        </div>
+        <form action="/download_report" method="POST">
+            <input type="hidden" name="text" value="{{ text }}">
+            <input type="hidden" name="polarity" value="{{ sentiment.polarity }}">
+            <input type="hidden" name="subjectivity" value="{{ sentiment.subjectivity }}">
+            <input type="hidden" name="max_word" value="{{ max_word }}">
+            <input type="hidden" name="mood" value="{{ mood }}">
+            <button type="submit" class="btn btn-primary btn-block">Download Report</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
