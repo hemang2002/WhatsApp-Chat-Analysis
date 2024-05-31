@@ -6,7 +6,9 @@ It uses flask framwork for building web applications.
 How to use:
 
 #Download or clone the repository
-```html git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git html'''
+```html
+git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git
+html'''
 
 
 # Steps:
