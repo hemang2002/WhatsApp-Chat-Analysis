@@ -7,28 +7,9 @@ How to use:
 
 #Download or clone the repository
 ```html
-<div>
-  <pre>
-    <code>
-      // Your code snippet here
-      const example = "Hello, World!";
-      console.log(example);
-    </code>
-  </pre>
-  <button onclick="copyToClipboard()">Copy</button>
-</div>
-
 <script>
-  function copyToClipboard() {
-    const codeBlock = document.querySelector('code').innerText;
-    navigator.clipboard.writeText(codeBlock).then(() => {
-      alert('Code copied to clipboard!');
-    }, () => {
-      alert('Failed to copy code.');
-    });
-  }
+git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git
 </script>
-[ git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git](https://github.com/hemang2002/WhataApp-Chat-Analysis.git)
 
 # Steps:
 1) pip install virtualenv
