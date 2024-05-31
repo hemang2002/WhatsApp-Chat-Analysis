@@ -6,10 +6,8 @@ It uses flask framwork for building web applications.
 How to use:
 
 #Download or clone the repository
-```html
-<script>
-git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git
-</script>
+```html git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git html'''
+
 
 # Steps:
 1) pip install virtualenv
