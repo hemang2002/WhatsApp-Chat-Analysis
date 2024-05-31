@@ -14,17 +14,17 @@ from tqdm import tqdm
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
-# import nltk
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag
 
-# nltk.download('punkt')
-# nltk.download('wordnet')
-# nltk.download('averaged_perceptron_tagger')
-# nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('stopwords')
 
 class getAnalysis:
 
