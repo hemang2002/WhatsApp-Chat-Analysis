@@ -4,7 +4,7 @@ WhatsApp Chat Analysis is a technique that uses data analysis methods to uncover
 
 # Tech Stack Used
 Framework - Flask
-Technologies - ![image](https://github.com/hemang2002/WhataApp-Chat-Analysis/assets/66712880/4edb6cc5-4fbd-4c51-81c1-5817ff56ccb4) ![image](https://github.com/hemang2002/WhataApp-Chat-Analysis/assets/66712880/355d0129-e9df-455c-a61e-cd67153503f5)
+Technologies - ![image](https://github.com/hemang2002/WhataApp-Chat-Analysis/assets/66712880/4edb6cc5-4fbd-4c51-81c1-5817ff56ccb4) ![image](https://github.com/hemang2002/WhataApp-Chat-Analysis/assets/66712880/355d0129-e9df-455c-a61e-cd67153503f5)<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/></a>
 
 Model - "bhadresh-savani/bert-base-go-emotion"
 
