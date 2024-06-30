@@ -19,20 +19,20 @@ git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git
 # Steps to use
 Copy and Paste in the Command Prompt:
 ```
-1) pip install virtualenv
+pip install virtualenv
 ```
 ```
-2) cd path/to/save (in this case WhataApp-Chat-Analysis)
+cd path/to/save (in this case WhataApp-Chat-Analysis)
 ```
 ```
-3) virtualenv venv
+virtualenv venv
 ```
 ```
-4) venv\Scripts\activate
+venv\Scripts\activate
 ```
 ```
-5) pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ```
-6) python app.py
-```
+python app.py
+'''
