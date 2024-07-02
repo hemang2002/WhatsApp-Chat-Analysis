@@ -13,7 +13,7 @@ Model - "bhadresh-savani/bert-base-go-emotion"
 To clone the repository, use the following command:
 
 ```
-git clone https://github.com/hemang2002/WhataApp-Chat-Analysis.git
+git clone https://github.com/hemang2002/WhatsApp-Chat-Analysis.git
 ```
 
 # Steps to use
